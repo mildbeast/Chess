@@ -1,0 +1,59 @@
+use case
+    player set up pieces with start position
+    start game by black player's first move
+    each player takes turns until checkmate.
+    player move one piece for each turn
+        player select a piece to move
+        board shows the valid position to move
+        player choose the position
+        player's move can capture opponent piece
+        each piece can move by its rule and other pieces on the board
+    end game with winner
+
+
+
+class list
+
+    Board
+        - pieces (black, white)
+        init
+        applyMove
+        isCheckMate
+        isCheck
+        showCheck
+        selectPiece
+            showValidMove
+
+    Player
+        - pieces
+        - opponentPieces
+        makeMove(Move)
+
+
+    Piece
+        - type
+        - position
+        validMoves(board)
+
+    GameControl
+        - player
+        - board
+        - moves
+        initBoard
+        startGame
+        giveTurn(player)
+        endGame
+
+    MovementRule
+
+    Move
+        - piece
+        - startPos, endPos
+        - captured piece
+
+    View
+        showStatus
+        showWinner
+
+    Presenter
+        select
